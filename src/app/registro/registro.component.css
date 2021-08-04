@@ -1,0 +1,77 @@
+
+.textCorreo {
+  position: absolute;
+  width: 224px;
+  height: 36px;
+  left: 12px;
+  top: 260px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+.correo {
+  position: absolute;
+  width: 304px;
+  height: 40px;
+  left: 12px;
+  top: 301px;
+}
+
+.textContraseña {
+  position: absolute;
+  width: 224px;
+  height: 36px;
+  left: 12px;
+  top: 362px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.contraseña {
+  position: absolute;
+  width: 400px;
+  height: 40px;
+  left: 12px;
+  top: 400px;
+}
+
+.contBtn {
+  position: absolute;
+  width: 238px;
+  height: 51px;
+  left: 61px;
+  top: 482px;
+  background: rgba(66, 232, 46, 0.47);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btnLogin {
+  text-decoration: none;
+  position: absolute;
+  width: 238px;
+  height: 51px;
+  left: 61px;
+  top: 0px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
