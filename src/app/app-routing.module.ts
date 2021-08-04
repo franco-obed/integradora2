@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { NuevaSesionComponent } from './nueva-sesion/nueva-sesion.component';
 import { BienvenidoComponent } from './bienvenido/bienvenido.component';
+import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [{
   path: '', component: AppComponent},
@@ -15,6 +16,9 @@ const routes: Routes = [{
   },
   {
     path: 'login', component: LoginComponent
+  },
+  {
+    path: 'registro', component: RegistroComponent
   }
 
 ];
