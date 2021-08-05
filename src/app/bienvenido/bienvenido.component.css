@@ -1,0 +1,40 @@
+.textBienvenido {
+  position: absolute;
+  width: 257px;
+  height: 58px;
+  left: 71px;
+  top: 22px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+.PlantaNegra {
+  position: absolute;
+  left: 120px;
+  top: 87px;
+  background: url(../../assets/Planta_NegraPNG.png);
+}
+
+.iPlant {
+  position: absolute;
+  width: 260px;
+  height: 80px;
+  left: 91px;
+  top: 215px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 64px;
+  line-height: 75px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
