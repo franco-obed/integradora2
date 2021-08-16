@@ -16,6 +16,7 @@ import { PorcentajeHumedadMedioComponent } from './lectura/porcentaje-humedad-me
 import { PorcentajeHumedadBajoComponent } from './lectura/porcentaje-humedad-bajo/porcentaje-humedad-bajo.component';
 import { NivelHumedadMedioComponent } from './lectura/nivel-humedad-medio/nivel-humedad-medio.component';
 import { NivelHumedadBajoComponent } from './lectura/nivel-humedad-bajo/nivel-humedad-bajo.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NivelHumedadBajoComponent } from './lectura/nivel-humedad-bajo/nivel-hu
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    IonicModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
