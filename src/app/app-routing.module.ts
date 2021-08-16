@@ -35,9 +35,12 @@ const routes: Routes = [{
       {
         path: 'leer_humedad', component: LeerHumedadComponent,
       },
+    ]
+  },
+
       {
         path: 'lectura', component: LecturaComponent,
-        children: [
+      },
           {
             path: 'nivel_humedad', component: NivelHumedadComponent,
           },
@@ -56,10 +59,10 @@ const routes: Routes = [{
           {
             path: 'porcentaje_humedad_medio', component: PorcentajeHumedadMedioComponent,
           }
-        ]
-      }
-    ]
-  }
+
+
+
+
 
 ];
 

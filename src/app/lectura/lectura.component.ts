@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Lectura } from './lectura.model';
 @Component({
   selector: 'app-lectura',
   templateUrl: './lectura.component.html',
@@ -11,5 +11,6 @@ export class LecturaComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  lectura: Lectura = new Lectura();
 
 }
