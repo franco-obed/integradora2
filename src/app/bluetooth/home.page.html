@@ -1,0 +1,10 @@
+<div>
+    <div>
+        <button (click)="ActivarBT()">Buscar</button>
+    </div>
+    <div *ngFor= "let data of Devices">
+        <p>{{data.name}}</p>
+        <p>{{data.id}}</p>
+        <button (click)="connect(data.address">Conectar</button>
+    </div>
+</div>
