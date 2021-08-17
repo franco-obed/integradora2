@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial/ngx';
 import {error} from "@angular/compiler/src/util";
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bluetooth',
@@ -10,10 +11,14 @@ import { AlertController } from '@ionic/angular';
 })
 export class BluetoothComponent implements OnInit {
   devices: any;
-  constructor(private bluetoothSerial: BluetoothSerial, private alertController: AlertController) {  }
+  constructor(private bluetoothSerial: BluetoothSerial, private alertController: AlertController, private router: Router) {  }
 
 
   ngOnInit(): void {
+  }
+
+  readBtSerial() {
+    return this.bluetoothSerial.read();
   }
 
   activarBluetooth() {
@@ -37,6 +42,7 @@ export class BluetoothComponent implements OnInit {
   connect(address:any) {
     this.bluetoothSerial.connect(address).subscribe(success => {
       this.deviceConnected();
+      this.redirect();
     },error=>{
       console.log("error");
     })
@@ -65,8 +71,8 @@ export class BluetoothComponent implements OnInit {
     console.log("disconnected");
   }
 
-  async isEnabled(msg: string) {
-    const alert = await this.alertController.create({
+  isEnabled(msg: string) {
+    const alert = this.alertController.create({
       header:'Alerta',
       message: msg,
       buttons: [{
@@ -78,4 +84,11 @@ export class BluetoothComponent implements OnInit {
 
     })
   }
+
+  redirect() {
+    this.router.navigate(['/lectura']);
+  }
+
+
+
 }
