@@ -1,0 +1,7 @@
+{
+  "name": "iPlant",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
