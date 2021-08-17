@@ -7,10 +7,10 @@ import { Lectura } from './lectura.model';
 })
 export class LecturaComponent implements OnInit {
 
-  constructor() { }
 
+  constructor( private lectura: Lectura) {  }
   ngOnInit(): void {
   }
-  lectura: Lectura = new Lectura();
 
 }
+
