@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
-import { BluetoothSerial } from '@ionic-native/bluetooth-serial/ngx';
-
-
-
+import { BluetoothSerial } from "@ionic-native/bluetooth-serial/ngx";
+import {RouteReuseStrategy, RouterModule} from "@angular/router";
+import {IonicModule, IonicRouteStrategy} from "@ionic/angular";
+import { BluetoothComponent } from './bluetooth.component';
+import { AlertController } from '@ionic/angular';
+import {AppRoutingModule} from "../app-routing.module";
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule, 
-    IonicModule
+    CommonModule,
+    IonicModule,
+
   ],
-  providers:[
-    BluetoothSerial
+  providers: [
+    BluetoothSerial,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ]
 })
 export class BluetoothModule { }
