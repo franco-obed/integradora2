@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial/ngx';
 import {error} from "@angular/compiler/src/util";
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import {AppComponent} from "../app.component";
 
 @Component({
   selector: 'app-bluetooth',
   templateUrl: './bluetooth.component.html',
   styleUrls: ['./bluetooth.component.css']
 })
+
+@Injectable({providedIn: 'root'})
 export class BluetoothComponent implements OnInit {
   devices: any;
   constructor(private bluetoothSerial: BluetoothSerial, private alertController: AlertController, private router: Router) {  }
@@ -23,10 +26,10 @@ export class BluetoothComponent implements OnInit {
 
   activarBluetooth() {
     this.bluetoothSerial.isEnabled().then(response => {
-      this.isEnabled("isOn");
       this.listDevices();
     }, error=>{
-      this.isEnabled("isOff");
+      this.isEnabled("Ocurrió un error");
+      this.redirect();
     })
   }
 
@@ -41,8 +44,9 @@ export class BluetoothComponent implements OnInit {
 
   connect(address:any) {
     this.bluetoothSerial.connect(address).subscribe(success => {
+      this.isEnabled("Dispositivo enlazado exitosamente");
       this.deviceConnected();
-      this.redirect();
+      //this.redirect();
     },error=>{
       console.log("error");
     })
@@ -69,10 +73,11 @@ export class BluetoothComponent implements OnInit {
   disconnect() {
     this.bluetoothSerial.disconnect();
     console.log("disconnected");
+
   }
 
-  isEnabled(msg: string) {
-    const alert = this.alertController.create({
+  async isEnabled(msg: string) {
+    let alert = await this.alertController.create({
       header:'Alerta',
       message: msg,
       buttons: [{
@@ -82,11 +87,15 @@ export class BluetoothComponent implements OnInit {
         }
       }]
 
-    })
+    });
+    await alert.present();
+
   }
 
+
   redirect() {
-    this.router.navigate(['/lectura']);
+    this.router.navigate(['../escaneo']);
+
   }
 
 
