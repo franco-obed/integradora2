@@ -14,10 +14,13 @@ import {NivelHumedadBajoComponent} from "./lectura/nivel-humedad-bajo/nivel-hume
 import { PorcentajeHumedadComponent } from './lectura/porcentaje-humedad/porcentaje-humedad.component';
 import { PorcentajeHumedadBajoComponent } from './lectura/porcentaje-humedad-bajo/porcentaje-humedad-bajo.component';
 import { PorcentajeHumedadMedioComponent } from './lectura/porcentaje-humedad-medio/porcentaje-humedad-medio.component';
-import { BluetoothComponent } from './lectura/bluetooth/bluetooth.component';
+import { BluetoothComponent } from './bluetooth/bluetooth.component';
+import { EscaneoComponent } from './escaneo/escaneo.component';
 
-const routes: Routes = [{
-  path: '', component: AppComponent},
+const routes: Routes = [
+  {
+  path: '', component: AppComponent,
+  },
   {
     path: '', component: BienvenidoComponent,
   },
@@ -32,18 +35,20 @@ const routes: Routes = [{
   },
   {
     path: 'principal', component: PrincipalComponent,
-    children: [
+  },
       {
         path: 'leer_humedad', component: LeerHumedadComponent,
       },
-    ]
-  },
 
-      {
-        path: 'lectura', component: LecturaComponent,
-      },
+
+
+
   {
     path: 'bluetooth', component: BluetoothComponent,
+  },
+
+  {
+    path: 'lectura', component: LecturaComponent,
   },
           {
             path: 'nivel_humedad', component: NivelHumedadComponent,
@@ -62,7 +67,10 @@ const routes: Routes = [{
           },
           {
             path: 'porcentaje_humedad_medio', component: PorcentajeHumedadMedioComponent,
-          }
+          },
+  {
+    path: 'escaneo', component: EscaneoComponent,
+  }
 
 
 
