@@ -12,10 +12,12 @@
     </ion-toolbar>
   </ion-header>
 <button (click)="activarBluetooth()">Buscar</button>
+  <button routerLink="../escaneo">nada</button>
 <div *ngFor="let data of devices" >
   <p>{{data.name}}</p>
   <p>{{data.id}}</p>
-  <button (click)="connect(data.address)">Conectar</button>
+  <button (click)="connect(data.address)" routerLink="../escaneo">Conectar</button>
+
 </div>
 
 </ion-content>
