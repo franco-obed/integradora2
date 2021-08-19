@@ -19,7 +19,9 @@ import { NivelHumedadBajoComponent } from './lectura/nivel-humedad-bajo/nivel-hu
 import {AlertController, IonicModule, IonicRouteStrategy} from '@ionic/angular';
 import {BluetoothSerial} from "@ionic-native/bluetooth-serial/ngx";
 import {RouteReuseStrategy} from "@angular/router";
-import { BluetoothComponent } from './lectura/bluetooth/bluetooth.component';
+import { BluetoothComponent } from './bluetooth/bluetooth.component';
+import { Lectura } from './lectura/lectura.model';
+import { EscaneoComponent } from './escaneo/escaneo.component';
 
 
 @NgModule({
@@ -31,14 +33,16 @@ import { BluetoothComponent } from './lectura/bluetooth/bluetooth.component';
     RegistroComponent,
     PrincipalComponent,
     LeerHumedadComponent,
-    LecturaComponent,
     PorcentajeHumedadComponent,
     NivelHumedadComponent,
     PorcentajeHumedadMedioComponent,
     PorcentajeHumedadBajoComponent,
     NivelHumedadMedioComponent,
     NivelHumedadBajoComponent,
-    BluetoothComponent
+    BluetoothComponent,
+    LecturaComponent,
+    EscaneoComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,8 @@ import { BluetoothComponent } from './lectura/bluetooth/bluetooth.component';
   providers: [
     AlertController,
     BluetoothSerial,
+    BluetoothComponent,
+
     { provide: ErrorHandler, useClass: ErrorHandler }
   ],
   bootstrap: [AppComponent]
